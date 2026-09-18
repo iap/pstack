@@ -1,0 +1,38 @@
+{
+  "roles": {
+    "feature, refactoring": "z-ai/glm-5.2",
+    "bug-fix": "z-ai/glm-5.2",
+    "perf-issue": "z-ai/glm-5.2",
+    "hillclimb": "z-ai/glm-5.2",
+    "judgment and prose": "meituan/longcat-2.0",
+    "hardest tasks": "z-ai/glm-5.2",
+    "how explorer": "meituan/longcat-2.0",
+    "how explainer": "meituan/longcat-2.0",
+    "how critics": [
+      "meituan/longcat-2.0",
+      "meta/muse-spark-1.2-contributor"
+    ],
+    "why investigators": "meituan/longcat-2.0",
+    "why synthesizer": "z-ai/glm-5.2",
+    "reflect tooling": "qwen/qwen-2.5-7b-instruct",
+    "reflect judgment, divergent, synthesizer": "z-ai/glm-5.2",
+    "arena runners": [
+      "meituan/longcat-2.0",
+      "meta/muse-spark-1.2-contributor"
+    ],
+    "arena cross-judge pool": [
+      "z-ai/glm-5.2",
+      "meituan/longcat-2.0"
+    ],
+    "swarm workers": "meituan/longcat-2.0",
+    "architect runners": [
+      "z-ai/glm-5.2",
+      "meta/muse-spark-1.2-contributor"
+    ],
+    "interrogate reviewers": [
+      "z-ai/glm-5.2",
+      "meituan/longcat-2.0",
+      "meta/muse-spark-1.2-contributor"
+    ]
+  }
+}

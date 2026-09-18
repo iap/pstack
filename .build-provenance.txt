@@ -1,0 +1,41 @@
+package: pstack (hermes agent-plugins-v1, Phase-0 conversion)
+source: (local clone; public origin in source_url)
+source_url: https://github.com/cursor/plugins.git
+source_commit: 93b00b89ef425a9c1bac0d0b317dfc49c930ac99
+converted_at: 2026-09-18T21:19:29Z
+converter: convert.py (sha256[:16]=f9a9903296756ef6)
+schema: https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
+fixes:
+  - F-publish: skills/make-bot-ui excluded (Tailscale privilege-escalation scan; F33; upstream flattened the grokbot container)
+  - F-publish: make-bot-ui slot filled by hermes-native skills/hermesbot (tools/assets/hermesbot/SKILL.md; hermes gateway webhook/peer/send stack)
+  - skills/poteto-mode/SKILL.md: frontmatter name 'Poteto Mode' -> 'poteto-mode'
+  - script package metadata renamed for hermes, test/typecheck scripts bootstrap deps, git-fixture signing disabled, and Graphite fixture tests given explicit Bun timeouts
+  - T15: orch frontier stack provider abstraction added (auto/graphite/github, gitlab reserved)
+  - R1: poteto-mode principles index regenerated from 21 leaves (single source of truth; hand-maintained wording replaced)
+  - F16: check-plan.mjs lane slug env-overridable via PSTACK_FAST_LANE
+  - F16: multi-phase-plan template documents the PSTACK_FAST_LANE override
+  - F10-F12: worktree-audit.sh portable via stat_mtime/date_epoch helpers (GNU + BSD/macOS); awk no longer truncates space-paths
+  - F-publish: 3 localhost endpoint literals neutralized in feature-map example docs (install-scanner network findings)
+  - T8: factual fixes from the hermes deep review applied to 8 skill file(s) + the source-playbook adaptation note (readonly-MCP rationale, swarm Cursor params, tool-name mappings, model-panel path, principle cross-link)
+  - Phase-2A: delegation translation applied across 17 skill files (subagent_type/Task/AskQuestion/run_in_background/cloud -> delegate_task + clarify + background execution)
+  - Stage-D: config/models.json shipped with the model panel (18 roles)
+  - T9/T10: hermes-native discovery/config fixes applied across 12 skill file pass(es) (setup-pstack models.json, why/reflect/recall session_search)
+  - T11: hardcoded-path fixes applied to 18 skill file(s) (.cursor rules/projects/skills paths, agent-transcripts recipes, /tmp scratch dirs, malformed-link checks, worktree-cleanup macOS note)
+  - G1: delegation escape hatch added to feature.md + poteto-mode Subagents (in-thread authoring allowed for resident surgical edits, with mandatory independent delegate review)
+  - T12: Cursor built-in wake/goal rewording applied across 9 skill file(s) + 1 checker file(s) (terminal /loop -> gateway cron wake; armed /goal -> goal.md in the agent store; check-plan marker aligned)
+  - T13: residual Cursor-vendor coupling Phase-2 wrap-up applied across 9 skill file(s) (cursor-team-kit plugin references, cloud-agent fleet, Graphite `gt` rewording)
+  - T14: stacker-role / topology rewording (option b, issue #33) applied across 1 skill file(s) (stacker clone, one-stacker serialization, retarget)
+  - Phase-2A: Comment Sicko persona copied into no-comments references for hermes prompt inlining
+  - F-publish: automations/benny excluded (scanner persistence verdict) and skills/make-bot-ui excluded (scanner privilege verdict; F33)
+  - assets/: 1 file(s) copied verbatim (referenced by the Cursor manifest)
+  - plugin.json: injected exact agent-plugins-v1 $schema at ROOT (9 whitelisted fields; displayName/category/tags/agents/skills omitted)
+  - text normalization: UTF-8 without BOM, LF line endings (files normalized: 125, BOM stripped: 0, CRLF fixed: 0)
+  - anchor audit: 124/124 transform anchors applied (0 dead; the converter fails loudly on upstream drift)
+counts:
+  skills_loaded: 45 (24 workflow/mode + 21 principle)
+  skill_md_on_disk: 45 (skills/ only; automations/benny + make-bot-ui excluded for the install scanner)
+  agents_files: 2
+notes:
+  - agents/ is inert on the hermes portable path (kept for Cursor dual-load / Phase 2)
+  - automations/benny + make-bot-ui excluded (install-scanner verdict); rebuild via Phase 4 / stay Cursor-side
+  - .cursor-plugin/plugin.json preserved unchanged for Cursor dual-load; hermes probes the root manifest only
