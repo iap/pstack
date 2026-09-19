@@ -2,8 +2,8 @@ package: pstack (hermes agent-plugins-v1, Phase-0 conversion)
 source: (local clone; public origin in source_url)
 source_url: https://github.com/cursor/plugins.git
 source_commit: 93b00b89ef425a9c1bac0d0b317dfc49c930ac99
-converted_at: 2026-09-18T23:54:06Z
-converter: convert.py (sha256[:16]=03f14c344e3b750a)
+converted_at: 2026-09-19T00:21:32Z
+converter: convert.py (sha256[:16]=ed99d891ef5672c7)
 schema: https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
 fixes:
   - F-publish: skills/make-bot-ui excluded (Tailscale privilege-escalation scan; F33; upstream flattened the grokbot container)
@@ -29,6 +29,7 @@ fixes:
   - F-publish: automations/benny excluded (scanner persistence verdict) and skills/make-bot-ui excluded (scanner privilege verdict; F33)
   - assets/: 1 file(s) copied verbatim (referenced by the Cursor manifest)
   - plugin.json: injected exact agent-plugins-v1 $schema at ROOT (9 whitelisted fields; displayName/category/tags/agents/skills omitted)
+  - after-install.md: install-completion panel (gateway restart, setup-pstack, poteto-mode routing)
   - text normalization: UTF-8 without BOM, LF line endings (files normalized: 125, BOM stripped: 0, CRLF fixed: 0)
   - anchor audit: 124/124 transform anchors applied (0 dead; the converter fails loudly on upstream drift)
 counts:
