@@ -2,7 +2,7 @@ package: pstack (hermes agent-plugins-v1, Phase-0 conversion)
 source: (local clone; public origin in source_url)
 source_url: https://github.com/cursor/plugins.git
 source_commit: 93b00b89ef425a9c1bac0d0b317dfc49c930ac99
-converted_at: 2026-09-20T17:19:50Z
+converted_at: 2026-09-20T18:26:57Z
 converter: convert.py (sha256[:16]=ab4202be88f26e40)
 schema: https://agent-plugins.org/schemas/1.0.0/plugin.schema.json
 fixes:
