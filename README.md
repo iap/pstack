@@ -17,6 +17,9 @@ Legacy route: `hermes plugins install iap/pstack-hermes/pstack --enable`
 ## First run
 
 1. `hermes plugins doctor pstack --ci` — manifest parses, all skills discover.
+   Pick the target explicitly: `pstack` is ambiguous (repo root = local
+   directory; elsewhere = installed package). Use the name as installed for
+   the dist package, or a resolved local path for a branch tree.
 2. Load the `setup-pstack` skill once — it writes `config/models.json`
    (the 18-role model panel the workflow skills read).
 3. Load `poteto-mode` and give it a real task — it classifies the work and
