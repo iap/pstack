@@ -30,15 +30,15 @@ One message, three `delegate_task` calls (role: `leaf`), explicit `model:` on ea
 
 | Lens | `model` | Prompt template |
 |---|---|---|
-| Judgment | the reflect-judgment role model from `config/models.json` (fallback: parent chat model) | `references/judgment-reviewer.md` |
-| Tooling | the reflect-tooling role model from `config/models.json` (fallback: parent chat model) | `references/tooling-reviewer.md` |
-| Divergent | the reflect-judgment role model from `config/models.json` (fallback: parent chat model) | `references/divergent-reviewer.md` |
+| Judgment | the reflect-judgment role model from the model panel (`pstack-models.json` in the hermes config dir next to `config.yaml`) (fallback: parent chat model) | `references/judgment-reviewer.md` |
+| Tooling | the reflect-tooling role model from the model panel (`pstack-models.json` in the hermes config dir next to `config.yaml`) (fallback: parent chat model) | `references/tooling-reviewer.md` |
+| Divergent | the reflect-judgment role model from the model panel (`pstack-models.json` in the hermes config dir next to `config.yaml`) (fallback: parent chat model) | `references/divergent-reviewer.md` |
 
 Pass each template verbatim, substituting the Hermes session id or digest where marked. Reviewers return findings in the `delegate_task` response body.
 
 ### 3. Synthesize
 
-One `delegate_task` call (role: `leaf`), using the reflect-judgment role model from `config/models.json` (fallback: parent chat model), agent mode (`readonly: false`). The synthesizer's quality check includes spot-verifying citations, which can require MCP access; readonly on hermes restricts file writes only, so MCP access is unaffected. Use `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. The synthesizer returns a structured Accepted / Rejected / Backlog list.
+One `delegate_task` call (role: `leaf`), using the reflect-judgment role model from the model panel (`pstack-models.json` in the hermes config dir next to `config.yaml`) (fallback: parent chat model), agent mode (`readonly: false`). The synthesizer's quality check includes spot-verifying citations, which can require MCP access; readonly on hermes restricts file writes only, so MCP access is unaffected. Use `references/synthesizer.md` verbatim, with each reviewer's full output inlined where marked. The synthesizer returns a structured Accepted / Rejected / Backlog list.
 
 ### 4. Structural enforcement check
 

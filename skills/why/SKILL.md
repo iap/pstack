@@ -118,7 +118,7 @@ Launch all matching investigators in a single message so they run concurrently. 
 
 Subagent config (each):
 - `delegate_task`: role `leaf`
-- `model`: the why-investigators role model from `config/models.json` (fallback: the parent chat model)
+- `model`: the why-investigators role model from the model panel (`pstack-models.json` in the hermes config dir next to `config.yaml`) (fallback: the parent chat model)
 - `readonly`: `false` (agent mode) so investigators can record findings if needed. Note: readonly on hermes restricts file writes only - MCP access is unaffected, so read-only mode would also work for pure exploration. Investigators still shouldn't write anything. That's a posture, not a sandbox.
 
 Each investigator gets:
@@ -164,7 +164,7 @@ If your scope assessment suggests a single-commit trivial target where the PR de
 Spawn one synthesizer subagent:
 
 - `delegate_task`: role `leaf`
-- `model`: the why-synthesizer role model from `config/models.json` (fallback: the parent chat model)
+- `model`: the why-synthesizer role model from the model panel (`pstack-models.json` in the hermes config dir next to `config.yaml`) (fallback: the parent chat model)
 - `readonly`: `false` (agent mode). The synthesizer's quality check spot-verifies citations, which can require MCP access. Readonly mode on hermes restricts file writes only - MCP access is unaffected - but agent mode keeps the option to record findings.
 
 The synthesizer gets:

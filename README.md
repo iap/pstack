@@ -20,7 +20,7 @@ Legacy route: `hermes plugins install iap/pstack-hermes/pstack --enable`
    Pick the target explicitly: `pstack` is ambiguous (repo root = local
    directory; elsewhere = installed package). Use the name as installed for
    the dist package, or a resolved local path for a branch tree.
-2. Load the `setup-pstack` skill once — it writes `config/models.json`
+2. Load the `setup-pstack` skill once - it writes `pstack-models.json` beside hermes' `config.yaml`, outside this package, so plugin updates do not discard it
    (the 18-role model panel the workflow skills read).
 3. Load `poteto-mode` and give it a real task — it classifies the work and
    routes to the right playbook. You do not pick playbooks yourself.
@@ -86,7 +86,7 @@ Cursor plugin structurally; for real Cursor-side work install upstream pstack.
 | F16 | fast-lane slug overridable via `PSTACK_FAST_LANE` |
 | F10–F12 | `worktree-audit.sh` portable (GNU/BSD), space-safe |
 | F-publish | `benny` + `make-bot-ui` excluded (scanner verdicts); `hermesbot` fills the slot; 3 localhost literals neutralized |
-| T8/T9/T10 | `setup-pstack` writes `config/models.json`; discovery via `session_search`; hermes tool names |
+| T8/T9/T10 | `setup-pstack` writes the model panel beside hermes' `config.yaml` (outside the package, so updates do not discard it); discovery via `session_search`; hermes tool names |
 | Phase-2A | delegation vocabulary → `delegate_task` / `clarify` package-wide |
 | T11 | hardcoded Cursor paths → hermes equivalents |
 | T12 | `/loop` → `hermes cron` wake; `/goal` → `goal.md` in the agent store |

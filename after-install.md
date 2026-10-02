@@ -1,7 +1,7 @@
 # pstack installed
 
 1. `hermes gateway restart`
-2. Run the `setup-pstack` skill once — it writes `config/models.json`
+2. Run the `setup-pstack` skill once - it writes `pstack-models.json` beside hermes' `config.yaml`, outside this package, so plugin updates do not discard it
    (the model panel the workflow skills read).
 3. Load `poteto-mode` and hand it a real task — it classifies the work and
    routes to the right playbook.
